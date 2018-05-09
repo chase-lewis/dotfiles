@@ -1,0 +1,3 @@
+echo $SHELL
+exit
+exit

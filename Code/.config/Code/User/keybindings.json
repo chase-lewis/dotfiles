@@ -1,0 +1,10 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    { "key": "alt+m",
+        "command": "toggleVim"
+    },
+    {"key": "capslock", 
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    }
+]
