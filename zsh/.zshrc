@@ -133,11 +133,11 @@ export PATH="$PATH:$HOME/.local/bin"
 
 export DROP="/home/chase/Dropbox"
 export DOCS="/home/chase/Documents"
-export CONF="/home/chase/.files"
+export CONF="/home/chase/.dotfiles"
 
 export GT="$DOCS/gatech/"
-export SPR18="$GT"
-
+export SPR18="$GT/archive/18spr"
+export FALL18="$GT"
 
 # For opening in terminal and quiting
 alias qt="disown && exit"
@@ -149,6 +149,12 @@ alias 3312="$SPR18/3312"
 alias 3630="$SPR18/3630"
 alias 4057="$SPR18/4057"
 alias 4365="$SPR18/4365"
+alias 2230="$FALL18/2230"
+alias 3000="$FALL18/3000"
+alias 4001="$FALL18/4001"
+alias 4476="$FALL18/4476"
+alias 4510="$FALL18/4510"
+alias 4741="$FALL18/4741"
 
 alias ce="setxkbmap -option caps:escape"
 alias gt="cd $GT"
