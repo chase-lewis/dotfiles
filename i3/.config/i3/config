@@ -220,7 +220,8 @@ bindsym $mod+m mode "move"
 exec_always /home/chase/.local/bin/launchPolybar.sh
 
 # Border colors
-client.focused          #222632 #5294e2 #f5f6f7 #2e9ef4
+#client.focused          #222632 #5294e2 #f5f6f7 #2e9ef4
+client.focused          #222632 #f5f6f7 #f5f6f7 #f5f6f7
 client.focused_inactive #222632 #7c818c #f5f6f7 #484e50
 client.unfocused        #222632 #3b414f #8c8c8c #292d2e
 client.urgent           #222632 #cc575d #f5f6f7 #900000
