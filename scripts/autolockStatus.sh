@@ -3,5 +3,5 @@
 if pgrep xautolock >/dev/null; then
   echo ""
 else
-  echo ""
+  echo ""
 fi

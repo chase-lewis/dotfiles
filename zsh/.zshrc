@@ -67,7 +67,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    zsh-autosuggestions
+    tmuxinator
+    web-search
+    fasd
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,10 +132,21 @@ else
     start_agent;
 fi
 
+# Alternate SSH approach
+# if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+#   eval `ssh-agent`
+#   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+# fi
+# export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+# ssh-add -l > /dev/null || ssh-add
+
+# Enable fasd
+eval "$(fasd --init auto)"
+
 #export PATH="$HOME/anaconda3/bin:$PATH"
-export PATH="/home/chase/miniconda3/bin:$PATH"
-# export PATH=${PATH}:~/android-sdk-linux/platform-tools
-export PATH="$PATH:$HOME/.local/bin"
+#export PATH="/home/chase/miniconda3/bin:$PATH"
+#export PATH=${PATH}:~/android-sdk-linux/platform-tools
+#export PATH="$PATH:$HOME/.local/bin"
 
 export DROP="/home/chase/Dropbox"
 export DOCS="/home/chase/Documents"
@@ -141,20 +158,6 @@ export FALL18="$GT"
 
 # For opening in terminal and quiting
 alias qt="disown && exit"
-
-alias 3078="$SPR18/3078"
-alias 3127="$SPR18/3127"
-alias 3251="$SPR18/3251"
-alias 3312="$SPR18/3312"
-alias 3630="$SPR18/3630"
-alias 4057="$SPR18/4057"
-alias 4365="$SPR18/4365"
-alias 2230="$FALL18/2230"
-alias 3000="$FALL18/3000"
-alias 4001="$FALL18/4001"
-alias 4476="$FALL18/4476"
-alias 4510="$FALL18/4510"
-alias 4741="$FALL18/4741"
 
 alias ce="setxkbmap -option caps:escape"
 alias gt="cd $GT"
