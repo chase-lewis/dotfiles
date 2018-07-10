@@ -1,0 +1,11 @@
+configuration {
+    modi: 				"drun";
+    me-select-entry:	"MouseSecondary";
+    me-accept-entry:	"MousePrimary";
+    scroll-method:      1;
+    display-windowcd:   "Window: ";
+    show-icons:         true;
+    window-format:		"{c} - {t}";
+}
+
+@import "minimal_overlay.rasi"

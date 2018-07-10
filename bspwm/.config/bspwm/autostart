@@ -35,6 +35,7 @@ xset s noexpose &
 xset c on &
 xset -dpms &
 xbacklight -set 15 &
+pkill xautolock && xautolock -detectsleep -time 5 -locker blanklock -corners 000- -notify 30 -notifier "notify-send -u normal 'TIMOUT' 'System will lock in 30 seconds'" &
 ## Panel. The default is lemonbar script. Xfce4-panel can be more 
 ## easily configurable if you prefer that. Not installed by default
 #run_once xfce4-panel -d

@@ -116,8 +116,8 @@ colors:
   # Default colors
   primary:
     #background: '0x30343F'
-    background: '0x1d1f26'
-    foreground: '0xeaeaea'
+    background: '0x21262b'
+    foreground: '0xf4f5f6'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
@@ -184,7 +184,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.90
+background_opacity: 0.92
 
 # Mouse bindings
 #
