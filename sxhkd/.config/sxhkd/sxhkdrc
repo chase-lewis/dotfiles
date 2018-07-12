@@ -97,7 +97,7 @@ super + Return
     windowpromoter
 
 # Create a new "master area", splitting the whole desktop instead of just windows.
-alt + Return
+alt + shift + Return
 	bspc node -n @/
 	
 # go (Shift=move) to desktop (and focus the monitor that the desktop is located on. Bspwm style)
@@ -256,7 +256,7 @@ super + space
 	dmenu_recent -i -l 14 -w 600 -y $PANEL_HEIGHT
 
 super + shift + space
-	rofi -show
+	rofimenu
 
 super + d
 	rofi -show
@@ -289,6 +289,9 @@ super + shift + e
 Print
 	scrot
 
+# Dropdown terminal
+alt + Return
+	tdrop -ma -w 60% -x 20% -h 60% -s dropdown alacritty
 	
 #
 # Media keys
