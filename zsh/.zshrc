@@ -144,6 +144,7 @@ fi
 eval "$(fasd --init auto)"
 
 #export PATH="$HOME/anaconda3/bin:$PATH"
+export PATH="/home/chase/anaconda3/bin:$PATH"
 #export PATH="/home/chase/miniconda3/bin:$PATH"
 #export PATH=${PATH}:~/android-sdk-linux/platform-tools
 #export PATH="$PATH:$HOME/.local/bin"
