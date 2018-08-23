@@ -143,11 +143,9 @@ fi
 # Enable fasd
 eval "$(fasd --init auto)"
 
-#export PATH="$HOME/anaconda3/bin:$PATH"
+# Add anaconda to path
 export PATH="/home/chase/anaconda3/bin:$PATH"
-#export PATH="/home/chase/miniconda3/bin:$PATH"
-#export PATH=${PATH}:~/android-sdk-linux/platform-tools
-#export PATH="$PATH:$HOME/.local/bin"
+export PATH="/home/chase/.gem/ruby/2.5.0/bin:$PATH"
 
 export DROP="/home/chase/Dropbox"
 export DOCS="/home/chase/Documents"

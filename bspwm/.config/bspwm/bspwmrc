@@ -1,6 +1,6 @@
 #! /bin/sh
 gap=5
-PANEL_HEIGHT=20
+PANEL_HEIGHT=14
 export gap
 export PANEL_HEIGHT
 
@@ -86,6 +86,7 @@ bspc rule -a tint2 border=off manage=off
 #bspc desktop I --layout monocle
 #bspc desktop II --layout monocle
 bspc rule -a '*:zathura' state=tiled
+bspc rule -a Emacs state=tiled
 
 
 ##  Autogap adjusts windowgap automatically according to the number of
@@ -110,4 +111,4 @@ bspc config external_rules_command /usr/bin/pseudo_automatic_mode
 #sxhkd &
 #Source autostartfile. Uncomment this if you use bspwm-git
 #. $HOME/.config/bspwm/autostart
-launchPolybar.sh &
+

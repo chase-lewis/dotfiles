@@ -54,9 +54,15 @@ i3lock-wait-for-suspend &
 srandrd atorandr.sh --change
 ## Notify about package updates
 update-checker 7200 &
+## Start redshift for blue light filtering
+pgrep redshift &> /dev/null || redshift -l 33.75:84.39 &> /dev/null &
 #xcape -e 'Super_L=Super_L|Shift_L|space' &
 dbus-launch gsettings set org.mate.NotificationDaemon theme 'slider' && sed -i '/gsettings/d' ~/.config/bspwm/autostart &
 #lxpolkit &
+# Start dropbox
+dropbox &
+# Setup monitors
+connectMonitor.sh &
 
 # mouse/key configs
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1

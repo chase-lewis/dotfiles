@@ -180,7 +180,7 @@ super + ctrl + b
 	bspc node @/ -E
 
 # Toggle automatic balancing of windows
-alt + b
+super + alt + b
 	euclid_balancer
 
 # Mirror and flip leaves of tree
@@ -349,3 +349,7 @@ super + BackSpace
 # Lock Screen
 alt + shift + l
   blanklock
+
+# Handle standard monitor connection
+super + ctrl + alt + p
+  connectMonitor.sh

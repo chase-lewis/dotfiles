@@ -8,5 +8,5 @@ if type "xrandr"; then
     MONITOR=$m polybar --reload panel &
   done
 else
-  polybar --reload example &
+  polybar --reload panel &
 fi
