@@ -85,16 +85,16 @@ pin-workspaces = true
 format = <label-state> <label-mode>
 label-monocle = 
 
-label-focused = %index%
+label-focused = %name%
 ;label-focused-background = ${colors.background-bright}
 label-focused-foreground = ${colors.background}
 label-focused-background = ${colors.foreground}
 label-focused-padding = 2
 
-label-occupied = %index%
+label-occupied = %name%
 label-occupied-padding = 2
 
-label-urgent = %index%!
+label-urgent = %name%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
@@ -319,7 +319,7 @@ type = custom/script
 exec = getPlaying.sh
 ;format-prefix = "  "
 ;format-prefix-foreground = ${colors.foreground-alt}
-click-left = i3-msg "[class=Spotify] scratchpad show"
+click-left = bspc desktop 0 -f
 
 interval = 1
 

@@ -87,6 +87,7 @@ bspc rule -a tint2 border=off manage=off
 #bspc desktop II --layout monocle
 bspc rule -a '*:zathura' state=tiled
 bspc rule -a Emacs state=tiled
+bspc rule -a Spotify desktop=0
 
 
 ##  Autogap adjusts windowgap automatically according to the number of

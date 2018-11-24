@@ -101,8 +101,10 @@ alt + shift + Return
 	bspc node -n @/
 	
 # go (Shift=move) to desktop (and focus the monitor that the desktop is located on. Bspwm style)
-super + {_,shift + }{1-9,0}
-    bspc {desktop -f,node -d} ^{1-9,10}
+super + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
+	bspc {desktop -f, node -d} {1,2,3,4,5,6,7,8,9,0}
+#super + {_,shift + }{1-9,0}
+    #bspc {desktop -f,node -d} ^{1-9,10}
 
 ## Alternative: i3 style behavior (focus nth, desktop of the focused monitor)
 #super + {1-9,0}
@@ -118,12 +120,12 @@ super + {_,shift + }{1-9,0}
 #	bspc node -d ^{1-9,10}
 
 # Select previous / next desktop
-super + {m,n}
+super + {n,m}
 	bspc desktop -f {prev.occupied,next.occupied} 
 
 # cycle windows
 alt + {_,shift + }Tab
-    bspc node -f {next,prev}
+    bspc desktop -f {last,newest}
 
 # Go to specific window
 super + Tab
@@ -259,7 +261,7 @@ super + shift + space
 	rofimenu
 
 super + d
-	rofi -show
+	rofimenu -show drun
 
 super + p
 	dmenu_recent -h $PANEL_HEIGHT -i -o 1
@@ -298,13 +300,13 @@ alt + Return
 #
 
 XF86AudioRaiseVolume
-	volume up
+	amixer sset Master 5%+
 
 XF86AudioLowerVolume
-	volume down
+	amixer sset Master 5%-
 
 XF86AudioMute
-	volume mute
+	amixer sset Master toggle
 	
 XF86MonBrightnessDown
  light -U 5 
