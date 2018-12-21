@@ -3,9 +3,8 @@
  */
 
 configuration {
-	modi: 							"combi,:rofind";
-	//combi-modi: 					"window,drun,\/:rofind,run";
-	combi-modi: 					"window,drun,run";
+	modi: 							"combi,window";
+	combi-modi: 					"window,drun,run,ssh";
 	me-select-entry:				"MouseSecondary";
 	me-accept-entry:				"MousePrimary";
 	scroll-method: 1;

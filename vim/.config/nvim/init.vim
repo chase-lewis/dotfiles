@@ -17,8 +17,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ervandew/supertab'
@@ -29,10 +27,8 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'lervag/vimtex'
 
 "Airline and fonts:
-set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h20
+"set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h20
 set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline_theme='simple'
 
 "Remove escape delays
 set timeoutlen=1000 ttimeoutlen=0

@@ -1,11 +1,24 @@
-#!/bin/bash
+#
 # ~/.dmenurc
-DMENU_FN="unifont-8"
-DMENU_NB="#31363b"
-DMENU_NF="#f5f6f7"
-DMENU_SB="#f5f6f7"
-DMENU_SF="#31363b"
-TERMINAL_CMD="alacritty"
-PANEL_HEIGHT="14"
-DMENU_OPTIONS="-o 0.9 -fn $DMENU_FN -nb $DMENU_NB -nf $DMENU_NF -sf $DMENU_SF -sb $DMENU_SB"
-export DMENU_FN DMENU_NB DMENU_NF DMENU_SF DMENU_SB DMENU_OPTIONS PANEL_HEIGHT
+#
+
+## define the font for dmenu to be used
+DMENU_FN="Nerd-9"
+
+## background colour for unselected menu-items
+DMENU_NB="#1D1F21"
+
+## textcolour for unselected menu-items
+DMENU_NF="#C5C8C6"
+
+## background colour for selected menu-items
+DMENU_SB="#C5C8C6"
+
+## textcolour for selected menu-items
+DMENU_SF="#1D1F21"
+
+## command for the terminal application to be used:
+TERMINAL_CMD="terminal -e"
+
+## export our variables
+DMENU_OPTIONS="-fn $DMENU_FN -nb $DMENU_NB -nf $DMENU_NF -sf $DMENU_SF -sb $DMENU_SB"

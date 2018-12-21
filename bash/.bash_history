@@ -1,3 +1,0 @@
-echo $SHELL
-exit
-exit

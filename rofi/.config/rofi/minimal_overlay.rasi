@@ -35,8 +35,8 @@
     selected-active-background:  rgba ( 38, 139, 210, 100 % );
 }
 #window {
-    font: "Noto Sans 11";
-    background-color: rgba ( 49, 54, 59, 65 % );
+    font: "Noto Sans 10";
+    background-color: rgba ( 49, 54, 59, 85 % );
     padding:          25%;
     fullscreen:       true;
 }
