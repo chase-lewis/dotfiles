@@ -18,6 +18,7 @@ configuration {
     display-window:                 "";
     display-combi:                  "Go to";
     show-icons: true;
+    ssh-command:                    "terminal -e 'ssh {host}'";
 }
 
-@import "minimal_overlay.rasi"
+@import "Arc-Dark.rasi"
