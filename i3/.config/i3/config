@@ -47,6 +47,9 @@ bindsym $mod+space exec rofi -show
 # rofi window switcher
 bindsym $mod+Tab exec rofi -show window
 
+# Adjust monitor configuration
+bindsym $mod+p exec /home/chase/bin/connect_monitor.sh
+
 # launch categorized menu
 # bindsym $mod+z exec --no-startup-id morc_menu
 
@@ -215,7 +218,6 @@ for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Manjaro-hello"] floating enable
@@ -224,7 +226,6 @@ for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
@@ -321,9 +322,9 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -detectsleep -time 5 -locker blank -corners 000- -notify 30 -notifier "notify-send -u normal 'TIMEOUT' 'System will lock in 30 seconds'"
+exec --no-startup-id xautolock -detectsleep -time 5 -locker blurlock -corners 000- -notify 30 -notifier "notify-send -u normal 'TIMEOUT' 'System will lock in 30 seconds'"
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id setxkbmap -option caps:escape 
@@ -337,10 +338,10 @@ bindsym XF86AudioLowerVolume exec pulseaudio-ctl down && pkill -SIGRTMIN+10 i3bl
 bindsym XF86AudioMute exec pulseaudio-ctl mute && pkill -SIGRTMIN+10 i3blocks
 
 # Spotify media control
-bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-bindsym XF86AudioStop exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause && sleep .5 && pkill -SIGRTMIN+12 i3blocks
+bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next && sleep .5 && pkill -SIGRTMIN+12 i3blocks
+bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous && sleep .5 && pkill -SIGRTMIN+12 i3blocks
+bindsym XF86AudioStop exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop && sleep .5 && pkill -SIGRTMIN+12 i3blocks
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:

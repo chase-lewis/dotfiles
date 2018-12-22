@@ -31,8 +31,26 @@ markup=none
 # Current song
 [spotify]
 label=♪
-command=/home/chase/bin/getPlaying.sh
+command=/home/chase/bin/get_playing.sh
 interval=5
+signal=12
+
+#[spotify_prev]
+#full_text=
+#command=dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous > /dev/null && sleep .4 && pkill -SIGRTMIN+12 i3blocks
+#interval=0
+#separator=false
+#
+#[spotify_play_pause]
+#command=/home/chase/bin/playback_status.sh
+#interval=once
+#signal=12
+#separator=false
+#
+#[spotify_next]
+#full_text=
+#command=dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next > /dev/null && sleep .4 && pkill -SIGRTMIN+12 i3blocks
+#interval=0
 
 # Volume indicator
 #
@@ -97,7 +115,7 @@ signal=10
 [cpu_usage]
 label=
 interval=10
-min_width=CPU: 100.00%
+min_width= 100.00%
 #separator=false
 
 #[load_average]
@@ -123,6 +141,10 @@ interval=5
 label=
 command=date '+%H:%M'
 interval=5
+
+[autolock]
+command=/home/chase/bin/toggle_autolock.sh
+interval=once
 
 # Generic media player support
 #
