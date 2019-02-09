@@ -330,7 +330,8 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id setxkbmap -option caps:escape 
 
 # Dropdown terminal
-bindsym Mod1+Return exec tdrop -ma -w 60% -x 20% -h 60% -s dropdown xfce4-terminal
+bindsym Mod1+Return exec tdrop -ma -w 60% -x 20% -h 60% -s dropdown xfce4-terminal && i3-msg focus floating
+#bindsym Mod1+Return exec xfce4-terminal --drop-down
 
 # Audio control
 bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up && pkill -SIGRTMIN+10 i3blocks
