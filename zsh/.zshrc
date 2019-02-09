@@ -9,7 +9,7 @@ setopt appendhistory
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/chase/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -18,7 +18,7 @@ compinit
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/chase/.oh-my-zsh
+  export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -143,23 +143,5 @@ fi
 # Enable fasd
 eval "$(fasd --init auto)"
 
-# Add anaconda to path
-export PATH="/home/chase/anaconda3/bin:$PATH"
-export PATH="/home/chase/.gem/ruby/2.5.0/bin:$PATH"
-
-export DROP="/home/chase/Dropbox"
-export DOCS="/home/chase/Documents"
-export CONF="/home/chase/.dotfiles"
-
-export GT="$DOCS/gatech/"
-export SPR18="$GT/archive/18spr"
-export FALL18="$GT"
-
-# For opening in terminal and quiting
-alias qt="disown && exit"
-
-alias ce="setxkbmap -option caps:escape"
-alias gt="cd $GT"
-alias ta="cd $GT/ta"
-alias pj="cd $DOCS/projects"
-alias open="xdg-open"
+# Add hostname to prompt
+PROMPT="%{$fg[white]%}%n%{$fg[red]%}@%m%{$reset_color%} ${PROMPT}"
