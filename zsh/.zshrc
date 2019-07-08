@@ -140,6 +140,10 @@ fi
 # export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 # ssh-add -l > /dev/null || ssh-add
 
+# Set editor
+export EDITOR=nvim
+export VISUAL=nvim
+
 # Enable fasd
 eval "$(fasd --init auto)"
 
@@ -147,19 +151,9 @@ eval "$(fasd --init auto)"
 export PATH="/home/chase/anaconda3/bin:$PATH"
 export PATH="/home/chase/.gem/ruby/2.5.0/bin:$PATH"
 
-export DROP="/home/chase/Dropbox"
-export DOCS="/home/chase/Documents"
-export CONF="/home/chase/.dotfiles"
-
-export GT="$DOCS/gatech/"
-export SPR18="$GT/archive/18spr"
-export FALL18="$GT"
-
-# For opening in terminal and quiting
-alias qt="disown && exit"
-
+alias qt="disown && exit"  # open in terminal then exit
 alias ce="setxkbmap -option caps:escape"
-alias gt="cd $GT"
-alias ta="cd $GT/ta"
-alias pj="cd $DOCS/projects"
 alias open="xdg-open"
+alias vi="nvim"
+alias vim="nvim"
+
