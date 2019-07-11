@@ -140,6 +140,12 @@ fi
 # export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 # ssh-add -l > /dev/null || ssh-add
 
+# Set editor
+export EDITOR=nvim
+export VISUAL=nvim
+alias vi="nvim"
+alias vim="nvim"
+
 # Enable fasd
 eval "$(fasd --init auto)"
 
