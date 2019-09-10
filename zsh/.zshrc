@@ -18,7 +18,7 @@ compinit
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/chase/.oh-my-zsh
+export ZSH="/Users/chaselewis/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -109,37 +109,6 @@ unsetopt share_history
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# SSH Setup
-SSH_ENV="$HOME/.ssh/environment"
-
-function start_agent {
-    echo "Initialising new SSH agent..."
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
-}
-
-# Source SSH settings, if applicable (move to profile)
-
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
-
-# Alternate SSH approach
-# if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-#   eval `ssh-agent`
-#   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-# fi
-# export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-# ssh-add -l > /dev/null || ssh-add
-
 # Set editor
 export EDITOR=nvim
 export VISUAL=nvim
@@ -147,13 +116,7 @@ export VISUAL=nvim
 # Enable fasd
 eval "$(fasd --init auto)"
 
-# Add anaconda to path
-export PATH="/home/chase/anaconda3/bin:$PATH"
-export PATH="/home/chase/.gem/ruby/2.5.0/bin:$PATH"
 
-alias qt="disown && exit"  # open in terminal then exit
-alias ce="setxkbmap -option caps:escape"
-alias open="xdg-open"
 alias vi="nvim"
 alias vim="nvim"
 
