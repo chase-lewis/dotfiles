@@ -9,7 +9,7 @@ setopt appendhistory
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/chase/.zshrc'
+zstyle :compinstall filename '/usr/local/google/home/chaselewis/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -18,7 +18,7 @@ compinit
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/chaselewis/.oh-my-zsh"
+export ZSH="/usr/local/google/home/chaselewis/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -120,3 +120,5 @@ eval "$(fasd --init auto)"
 alias vi="nvim"
 alias vim="nvim"
 
+# Google
+source /etc/bash_completion.d/g4d
