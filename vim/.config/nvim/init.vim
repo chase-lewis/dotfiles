@@ -138,6 +138,8 @@ let wiki.auto_tags = 1
 let wiki.auto_diary_index = 1
 let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'sh': 'sh', 'java': 'java'}
 let g:vimwiki_list = [wiki]
+au BufNewFile wiki.path . "/diary/*.md" 0r ~/.vim/templates/diary.md | exe "1s/<vwiki-date>/" . strftime("%Y-%m-%d") . "/"
+
 
 "
 " Ledger
