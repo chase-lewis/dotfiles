@@ -17,11 +17,9 @@ Plugin 'scrooloose/nerdcommenter' " commenter, :help :NERDCommenter
 Plugin 'ervandew/supertab'        " easier completion (just tab)
 Plugin 'airblade/vim-gitgutter'   " Add git changes to gutter
 Plugin 'tpope/vim-sleuth'         " Auto indent-detection
-Plugin 'vimwiki/vimwiki'          " Wiki software for notes
 Plugin 'majutsushi/tagbar'        " Side bar for tags
 Plugin 'sjl/gundo.vim'            " Side bar for undo tree
 Plugin 'jamessan/vim-gnupg'       " Edit gpg files in vim
-Plugin 'ledger/vim-ledger'        " Easy ledger editing
 "Plugin 'lervag/vimtex'
 "Plugin 'benekastah/neomake'
 "Plugin 'valloric/youcompleteme'
@@ -126,39 +124,6 @@ map <C-n> :NERDTreeToggle<CR>
 " Gundo
 "
 nnoremap <leader>u :GundoToggle<CR>
-
-"
-" VimWiki
-"
-let wiki = {}
-let wiki.path = '~/documents/notes'
-let wiki.syntax = 'markdown'
-let wiki.ext = '.md'
-let wiki.auto_tags = 1
-let wiki.auto_diary_index = 1
-let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'sh': 'sh', 'java': 'java'}
-let g:vimwiki_list = [wiki]
-
-"
-" Ledger
-"
-au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
-au FileType ledger noremap { ?^\d<CR>
-au FileType ledger noremap } /^\d<CR>
-let g:ledger_maxwidth = 120
-let g:ledger_fold_blanks = 1
-let g:ledger_align_at = 60
-function! LedgerSort()
-    :silent %s/\s\+$//e
-    :silent %s/^\s\+/    /e
-    %! perl -n00 -e 'push @a, $_; END { print sort @a }'
-    :%LedgerAlign
-endfunction
-command! LedgerSort call LedgerSort()
-au FileType ledger nnoremap <silent> <leader>lf :LedgerSort<CR>
-au FileType ledger nnoremap <silent> <leader>le :call ledger#entry()<CR>:call ledger#transaction_state_set(line('.'), '*')<CR>:%LedgerAlign<CR>:echo 'banana'<CR>
-au FileType ledger nnoremap <silent> <leader>lt :call ledger#transaction_state_toggle(line('.'), ' *?!')<CR>
-
 
 "
 " Status bar
