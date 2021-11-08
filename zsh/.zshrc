@@ -109,6 +109,9 @@ unsetopt share_history
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Include timestamp on the right
+RPROMPT="[%*]"
+
 # Set editor
 export EDITOR=nvim
 export VISUAL=nvim
@@ -116,9 +119,89 @@ export VISUAL=nvim
 # Enable fasd
 eval "$(fasd --init auto)"
 
-
 alias vi="nvim"
 alias vim="nvim"
 
-# Google
+### Google###
+
+# Aliases and sources
 source /etc/bash_completion.d/g4d
+source /etc/bash_completion.d/hgd
+source /etc/bash.bashrc.d/shell_history_forwarder.sh
+alias ac="gcert && cideraccess"
+alias ~~="cd /google/src/files/head/depot/google3"
+alias fu="fileutil"
+alias full="fileutil ls -l"
+alias tmux="tmx2"
+compdef tmx2=tmux
+
+# SSH connections
+if [[ -n $SSH_CONNECTION ]] ; then
+  if ! gcertstatus; then
+    gcert && cideraccess
+  fi
+fi
+
+# Attach/start tmux on SSH login
+if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+  tmux attach-session -d -t ssh_tmux || tmux new-session -s ssh_tmux
+fi
+
+# Rename tmux pane to citc workspace
+function tmux_title() {
+  if [[ $PWD =~ /google/src/cloud/[^/]+/([^/]+)/.* ]]; then
+    tmx2 rename-window "${match[1]}"
+  else
+    # tmx2 rename-window "$(basename `pwd`)"
+  fi
+}
+if [[ ! -z "$TMUX" ]]; then
+  precmd_functions+=(tmux_title)
+fi
+
+# Load chat room url from secrets file (format: export WEBHOOK_URL=url)
+source ~/.chathook
+# Send messages to the Notification chat room.
+function notify() {
+  NOTIFY_OUT="$@"
+  curl \
+      -s \
+      -X POST \
+      -H 'Content-Type: application/json' \
+      "$WEBHOOK_URL" \
+      -d "{'text': '${NOTIFY_OUT}'}" \
+  > /dev/null && echo "Notification Sent"
+}
+alias pingme="notify Task Complete"
+
+# Automatic retry for g4 submission.
+function submit() {
+  echo "===   CD   ==="
+  g4d "$1"
+  sleep 2s
+  echo "===  gFIX  ===\n"
+  g4 fix
+  for i in {1..999}
+    do
+      echo "\n===  SYNC  ===\n"
+      g4 sync
+      echo "\n=== STATUS ===\n"
+      gcertstatus
+      if [ "$?" -ne 0]; then
+        return [1]
+      fi
+      echo "\n=== SUBMIT ===\n"
+      yes | g4 submit -c "$1"
+      if [ $? -eq 0 ]; then
+        echo "\n=== MERGED ===\n"
+        notify "Change submitted\nhttp://cl/$1"
+        return 0
+      else
+        echo "\n=== FAILED ===\n"
+        echo "\n===  WAIT  ===\n"
+        notify "Retrying submittion in 3 minutes\nhttp://cl/$1"
+        sleep 3m
+      fi
+    done
+}
+
