@@ -133,6 +133,7 @@ alias ~~="cd /google/src/files/head/depot/google3"
 alias fu="fileutil"
 alias full="fileutil ls -l"
 alias tmux="tmx2"
+alias abc="/google/data/ro/projects/smartass/brain/abc"
 compdef tmx2=tmux
 
 # SSH connections
