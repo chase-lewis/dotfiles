@@ -119,4 +119,10 @@ eval "$(fasd --init auto)"
 
 alias vi="nvim"
 alias vim="nvim"
+alias ac="(gcertstatus || gcert) && ssh -t chaselewis.mtv.corp.google.com bash -c 'gcertstatus || gcert && cideraccess'"
+alias acf="gcert &&  ssh -t work bash -c 'gcert && cideraccess'"
+alias acc="gcert &&  ssh -t cloudtop bash -c 'gcert && cideraccess'"
+alias work="(gcertstatus || gcert) && gmosh work"
+alias cloudtop="(gcertstatus || gcert) && gmosh cloudtop"
+alias b2="/Users/chaselewis/Library/Python/3.9/bin/b2"
 
