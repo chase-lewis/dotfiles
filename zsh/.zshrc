@@ -144,9 +144,9 @@ if [[ -n $SSH_CONNECTION ]] ; then
 fi
 
 # Attach/start tmux on SSH login
-if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
-  tmux attach-session -d -t ssh_tmux || tmux new-session -s ssh_tmux
-fi
+# if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+#   tmux attach-session -d -t ssh_tmux || tmux new-session -s ssh_tmux
+# fi
 
 # Rename tmux pane to citc workspace
 function tmux_title() {
