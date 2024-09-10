@@ -123,8 +123,10 @@ alias vi="nvim"
 alias vim="nvim"
 
 ### Google###
+source /google/src/head/depot/google3/ads/adsui/scripts/gwsfuncs.sh
 
 # Aliases and sources
+source ~/.bash_aliases
 source /etc/bash_completion.d/g4d
 source /etc/bash_completion.d/hgd
 source /etc/bash.bashrc.d/shell_history_forwarder.sh
@@ -134,6 +136,7 @@ alias fu="fileutil"
 alias full="fileutil ls -l"
 alias tmux="tmx2"
 alias abc="/google/data/ro/projects/smartass/brain/abc"
+alias flex='flex.par'
 compdef tmx2=tmux
 
 # SSH connections
@@ -171,7 +174,7 @@ function notify() {
       -H 'Content-Type: application/json' \
       "$WEBHOOK_URL" \
       -d "{'text': '${NOTIFY_OUT}'}" \
-  > /dev/null && echo "Notification Sent"
+  > /dev/null && echo "Notification Sent: $@"
 }
 alias pingme="notify Task Complete"
 
