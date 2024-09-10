@@ -15,7 +15,7 @@ compinit
 # End of lines added by compinstall
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/opt/homebrew/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/chaselewis/.oh-my-zsh"
@@ -119,10 +119,13 @@ eval "$(fasd --init auto)"
 
 alias vi="nvim"
 alias vim="nvim"
-alias ac="(gcertstatus || gcert) && ssh -t chaselewis.mtv.corp.google.com bash -c 'gcertstatus || gcert && cideraccess'"
-alias acf="gcert &&  ssh -t work bash -c 'gcert && cideraccess'"
-alias acc="gcert &&  ssh -t cloudtop bash -c 'gcert && cideraccess'"
-alias work="(gcertstatus || gcert) && gmosh work"
-alias cloudtop="(gcertstatus || gcert) && gmosh cloudtop"
+alias ac="(gcertstatus || gcert) && ssh -t workstation bash -c 'gcertstatus || gcert && cideraccess'"
+alias acw="ac && work"
+alias acf="gcert &&  ssh -t workstation bash -c 'gcert && cideraccess'"
+alias acc="(gcertstatus || gcert) && ssh -t cloudtop bash -c 'gcertstatus || gcert && cideraccess'"
+alias accw="acc && cloudtop"
+alias accf="gcert &&  ssh -t cloudtop bash -c 'gcert && cideraccess'"
+alias work="(gcertstatus || gcert) && gmosh workstation -- tmux new-session -A -s mac_ssh"
+alias cloudtop="(gcertstatus || gcert) && gmosh cloudtop -- tmux new-session -A -s mac_ssh"
 alias b2="/Users/chaselewis/Library/Python/3.9/bin/b2"
 
